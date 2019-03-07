@@ -22,7 +22,6 @@ class LinkedList:
             while(q.next != None):
                 q = q.next
             q.next = Node(input_num)
-        return
 
 
     def traverse(self):
@@ -157,25 +156,53 @@ class LinkedList:
             p = r
             r = q
         self.head = p
+    
+    
+    def rotate_anti_clockwise(self,k = 4):
+        if(k == 0):
+            return
+        current = self.head
+        count = 1
+
+        while(count < k and current is not None):
+            current = current.next
+            count += 1
+
+        if(current is None):
+            return
+
+        kthNode = current
+
+        while(current.next is not None):
+            current = current.next
+        
+        current.next = self.head
+        self.head = kthNode.next
+        kthNode.next = None
+        
+        return
 
         
 if __name__ == '__main__':
     linked_list = LinkedList()
-    for _ in range(5):
+    for _ in range(6):
         linked_list.create_node()
-    linked_list.insert_at_begin()
-    linked_list.insert_at_pos(4)
-    print("Middle Element " + str(linked_list.middle_element()))
-    linked_list.delete_at_begin()
-    print("Listing Element after first deletion. ")
-    linked_list.traverse()
-    linked_list.delete_at_end()
-    print("Listing Element after second deletion. ")
-    linked_list.traverse()
-    linked_list.delete_at_pos(2)
-    print("Listing Element after deleting from given position.")
-    linked_list.traverse()
-    linked_list.reverse()
-    print("Reversing Linked List.")
+    # linked_list.insert_at_begin()
+    # linked_list.insert_at_pos(4)
+    # print("Middle Element " + str(linked_list.middle_element()))
+    # linked_list.delete_at_begin()
+    # print("Listing Element after first deletion. ")
+    # linked_list.traverse()
+    # linked_list.delete_at_end()
+    # print("Listing Element after second deletion. ")
+    # linked_list.traverse()
+    # linked_list.delete_at_pos(2)
+    # print("Listing Element after deleting from given position.")
+    # linked_list.traverse()
+    # linked_list.reverse()
+    # print("Reversing Linked List.")
+    # linked_list.traverse()
+    print("Rotating a Linked List Anti-Clockwise")
+    linked_list.rotate_anti_clockwise(3)
     linked_list.traverse()
     
