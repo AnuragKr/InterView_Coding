@@ -58,7 +58,7 @@ if __name__ == "__main__":
     stack = Stack(5)
     for _ in range(5):
         stack.push(int(input("Enter stack element: ")))
-    print("Minimum Element: "stack.get_min())
+    print("Minimum Element: " +  str(stack.get_min()))
     
 
 
