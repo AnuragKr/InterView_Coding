@@ -8,7 +8,7 @@ class Stack:
         self.max_element = -sys.maxsize -1
     
     def push_operation_min(self,input_num):
-        if(self.top == self.size - 1):
+        if(self.top==self.size - 1):
             print("Overflow Condition")
             return
         else:
@@ -26,7 +26,7 @@ class Stack:
     
     
     def push_operation_max(self,input_num):
-        if(self.top == self.size - 1):
+        if(self.top==self.size - 1):
             print("Overflow Condition")
             return
         else:
