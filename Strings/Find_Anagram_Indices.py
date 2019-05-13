@@ -38,10 +38,15 @@ def anagram_indices(word,s):
         del_if_zero(freq,start_char)
 
         freq[end_char] -= 1
-        del_if_zero(freq,)
+        del_if_zero(freq,end_char)
 
+        if not freq:
+            beginning_index = i - len(word) + 1
+            result.append(beginning_index)
+    
+    return result
 
 if __name__ == "__main__":
-    word = 'ab'
+    word = 'pq'
     s = 'abxaba'
-    print(anagram_indices(word, s))
+    print(anagram_indices(word,s))
